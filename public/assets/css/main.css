@@ -1,0 +1,2024 @@
+
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #555555; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0d3035; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #3ec1d5; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-hover-color: #3ec1d5; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #555555; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #3ec1d5; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f8f9f9;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  --background-color: rgba(0, 0, 0, 0.5);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  --background-color: #ffffff;
+  --text-color: #000000; /* Tambahkan warna teks saat discroll */
+}
+
+.scrolled .header a, 
+.scrolled .header span, 
+.scrolled .header h1, 
+.scrolled .header h2, 
+.scrolled .header h3 {
+  color: var(--text-color) !important;
+}
+
+.scrolled .navmenu li:hover>a,
+.scrolled .navmenu .active,
+.scrolled .navmenu .active:focus {
+  color: var(--nav-hover-color) !important;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer Styling
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  position: relative;
+}
+
+/* Styling untuk Logo di Footer */
+.footer-about {
+  display: flex;
+  align-items: center;
+}
+
+.footer-about a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footer-about img {
+  max-height: 50px; /* Menjaga ukuran logo agar tidak terlalu besar */
+  width: auto; /* Menjaga proporsi aslinya */
+  object-fit: contain; /* Memastikan logo tidak terpotong */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .footer-about {
+    justify-content: center; /* Menengahkan logo pada layar kecil */
+    text-align: center;
+  }
+
+  .footer-about img {
+    max-height: 40px; /* Mengurangi ukuran logo di perangkat kecil */
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer Links
+--------------------------------------------------------------*/
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer-links ul i {
+  margin-right: 5px;
+  font-size: 12px;
+  color: var(--accent-color);
+}
+
+.footer-links ul a {
+  display: inline-block;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Footer Social Media Links
+--------------------------------------------------------------*/
+.footer .social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Footer Copyright
+--------------------------------------------------------------*/
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center;
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 160px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+
+.section-title p {
+  color: var(--heading-color);
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+}
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  padding: 0;
+}
+
+.hero .carousel {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero .carousel-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero .carousel-item:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .carousel-item::before {
+  content: "";
+  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+}
+
+.hero .carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.hero h2 {
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+  animation: fadeInDown 1s both;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 30px;
+  }
+}
+
+.hero p {
+  animation: fadeInDown 1s both 0.2s;
+}
+
+@media (min-width: 1024px) {
+
+  .hero h2,
+  .hero p {
+    max-width: 60%;
+  }
+}
+
+.hero .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  animation: fadeInUp 1s both 0.4s;
+}
+
+.hero .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  width: 10%;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.hero .carousel-control-prev:focus,
+.hero .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.hero .carousel-indicators {
+  list-style: none;
+}
+
+.hero .carousel-indicators li {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* Background halaman header fullscreen */
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../img/carousel-1.jpg') center/cover no-repeat;
+  height: 50vh; /* Ukuran layar proporsional */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 50px 0;
+}
+
+/* Efek overlay untuk meningkatkan kontras teks */
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Posisi teks ke sisi kiri */
+.page-header .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px; /* Mengontrol lebar container */
+  padding-left: 50px;
+}
+
+/* Styling teks */
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 20px; /* Memberikan jarak bawah */
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 30px; /* Jarak tambahan di bawah teks */
+}
+
+/* Efek hover untuk link "Home" */
+.breadcrumb a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-color);
+}
+
+/* Warna breadcrumb pemisah */
+.breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Warna teks breadcrumb aktif */
+.breadcrumb .breadcrumb-item.active {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about ul li {
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.about ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+/* Frame untuk gambar */
+.about .img-frame {
+  border: 5px solid #f0f0f0; /* Warna border */
+  border-radius: 15px; /* Sudut melengkung */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  padding: 10px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.about .img-frame img {
+  border-radius: 10px; /* Melengkungkan sudut gambar */
+  width: 100%;
+  height: auto;
+}
+
+/* Tombol Read More - about */
+.about .read-more {
+  background: var(--accent-color);
+  color: var(--surface-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Hover efek untuk about */
+.about .read-more:hover {
+  background: var(--surface-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ikon efek hover */
+.about .read-more i {
+  font-size: 18px;
+  margin-left: 8px;
+  line-height: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about .read-more:hover i {
+  transform: translateX(5px);
+}
+
+
+/*--------------------------------------------------------------
+# Product Section
+--------------------------------------------------------------*/
+
+.product .product-filters {
+  padding: 0 0 20px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.product .product-filters li {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 12px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.product .product-filters li:hover,
+.product .product-filters li.filter-active {
+  background: var(--accent-color);
+  color: white;
+}
+
+@media (max-width: 575px) {
+  .product .product-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+/* Kartu Produk */
+.product .product-content {
+  background-color: var(--surface-color);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.product .product-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product .product-content img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product .product-content:hover img {
+  transform: scale(1.05);
+}
+
+.product .product-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.product .product-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product .product-info h4 a {
+  color: var(--heading-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.product .product-info h4 a:hover {
+  color: var(--accent-color);
+}
+
+
+/* Tombol Read More - Product */
+.product .read-more {
+  background: var(--accent-color);
+  color: var(--surface-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Hover efek untuk Product */
+.product .read-more:hover {
+  background: var(--surface-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ikon efek hover */
+.product .read-more i {
+  font-size: 18px;
+  margin-left: 8px;
+  line-height: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product .read-more:hover i {
+  transform: translateX(5px);
+}
+
+
+
+/*--------------------------------------------------------------
+# Activities Section
+--------------------------------------------------------------*/
+.activity-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+.activity-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.activity-box a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.activity-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Activity Info */
+.activity-info {
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.activity-box:hover .activity-info {
+  background-color: var(--primary-color);
+}
+
+/* Judul Aktivitas */
+.activity-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-align: left;
+}
+
+/* Efek Hover pada Judul */
+.activity-info h4:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Deskripsi Aktivitas */
+.activity-info p,
+.activity-desc {
+  font-size: 14px;
+  color: #666;  /* Warna tetap meskipun hover */
+  line-height: 1.5;
+  margin-top: 8px;
+  text-align: left;
+  transition: none; /* Hapus transition agar tidak berubah warna */
+}
+
+/* Tombol Read More */
+.activities .read-more {
+  background: var(--accent-color);
+  color: var(--surface-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Hover Efek pada Read More */
+.activities .read-more:hover {
+  background: var(--surface-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ikon pada Read More */
+.activities .read-more i {
+  font-size: 18px;
+  margin-left: 8px;
+  line-height: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.activities .read-more:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .activity-box img {
+    height: 150px;
+  }
+
+  .activity-meta {
+    justify-content: flex-start;
+  }
+}
+
+/*--------------------------------------------------------------
+# Kategori dan Tanggal Aktivitas
+--------------------------------------------------------------*/
+
+/* Container kategori dan tanggal */
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara kategori dan tanggal */
+  flex-wrap: wrap; /* Agar tetap responsif jika ruang tidak cukup */
+}
+
+/* Kategori dengan Background Dinamis */
+.activity-category {
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  white-space: nowrap; /* Hindari pemisahan teks */
+}
+
+/* Tanggal Aktivitas */
+.activity-date {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap; /* Hindari teks turun ke bawah */
+}
+
+
+/*--------------------------------------------------------------
+# Articles Section
+--------------------------------------------------------------*/
+.articles {
+  width: 100%;
+  padding: 60px 0;
+  background-color: var(--background-color, #f9f9f9);
+}
+
+/* Layout Artikel */
+.articles-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Artikel utama lebih besar, daftar artikel lebih kecil */
+  gap: 20px;
+  align-items: start;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Artikel Utama */
+.featured-article {
+  background-color: var(--surface-color, #ffffff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.article-category {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--accent-color); /* Warna latar belakang */
+  color: rgb(255, 255, 255) !important;
+  padding: 5px 12px; /* Padding agar teks tidak terlalu mepet */
+  border-radius: 6px; /* Membuat sudut lebih halus */
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  width: fit-content; /* Background otomatis mengikuti panjang teks */
+  max-width: 100%;
+  white-space: nowrap; /* Agar teks tidak pindah ke baris baru */
+}
+
+.featured-article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-article .article-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-article .article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out, opacity 0.3s;
+}
+
+.featured-article:hover .article-image img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.featured-article .article-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured-article .article-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--heading-color, #333);
+}
+
+.featured-article .article-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.featured-article .article-title a:hover {
+  color: var(--accent-color);
+}
+
+.featured-article .article-category {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--surface-color);
+}
+
+.featured-article .article-date {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.featured-article .article-desc {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+}
+
+/*--------------------------------------------------------------
+# Artikel Lainnya
+--------------------------------------------------------------*/
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Setiap Artikel Kecil */
+.article-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-color, #ffffff);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.article-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Gambar Artikel Kecil */
+.article-item .article-image {
+  width: 90px;
+  height: 70px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.article-item .article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.article-item:hover .article-image img {
+  transform: scale(1.1);
+}
+
+/* Konten Artikel Kecil */
+.article-item .article-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.article-item .article-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  line-height: 1.4;
+  color: var(--heading-color, #333);
+}
+
+.article-item .article-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.article-item .article-title a:hover {
+  color: var(--accent-color, #007bff);
+}
+
+.article-item .article-category {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--surface-color);
+}
+
+.article-item .article-date {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*--------------------------------------------------------------
+# Tombol & Hover Effect
+--------------------------------------------------------------*/
+.btn-secondary {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0px 4px 10px rgba(87, 86, 86, 0.371);
+}
+
+/*--------------------------------------------------------------
+# Responsif
+--------------------------------------------------------------*/
+@media (max-width: 992px) {
+  .articles-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-article .article-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-article .article-image {
+    height: 220px;
+  }
+
+  .article-item {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .article-item .article-image {
+    width: 75px;
+    height: 55px;
+  }
+
+  .article-item .article-content {
+    padding-left: 8px;
+  }
+}
+
+
+/* Container utama */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Pastikan layout artikel utama & sidebar sejajar */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Artikel Utama */
+.main-articles {
+  width: 100%;
+}
+
+/* Sidebar - Pastikan di kanan */
+.sidebar {
+  width: 100%;
+}
+
+/* Atur posisi kategori dan tanggal */
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+.article-meta .badge {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/* Artikel Card */
+.card {
+  background-color: var(--surface-color);
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.card-title a:hover {
+  color: var(--accent-color);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--surface-color);
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar Artikel Lainnya */
+.list-group-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Menambah jarak antar elemen */
+  padding: 12px;
+  background-color: var(--surface-color);
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer; /* Menambahkan pointer saat hover */
+}
+
+.list-group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Thumbnail Sidebar */
+.article-thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Konten Sidebar */
+.article-content {
+  flex-grow: 1; /* Memastikan konten menyesuaikan */
+  min-width: 0; /* Mencegah konten keluar dari container */
+}
+
+/* Judul di Sidebar */
+.article-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--accent-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.article-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-title:hover {
+  color: var(--accent-color);
+}
+
+/* Kategori dan Tanggal */
+.article-category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: white; /* Warna teks */
+  background-color: var(--accent-color); /* Warna latar belakang kategori */
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+
+.article-date {
+  font-size: 12px;
+  color: #666;
+}
+
+
+/* Pagination */
+.pagination .page-link {
+  background-color: var(--surface-color);
+  color: black;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.pagination .page-item.active .page-link,
+.pagination .page-link:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .main-articles {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .main-articles .card-img-top {
+    height: 200px;
+  }
+
+  .article-thumbnail {
+    width: 60px;
+    height: 50px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+/* Contact Section */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Contact Info */
+.contact-card {
+  flex: 1;
+  min-width: 450px;
+  max-width: 500px;
+  background: #3ec1d5;
+  color: white!important;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.contact-card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white!important;
+}
+
+.contact-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-item i {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.info-item h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white!important;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Map */
+.map-container {
+  flex: 1.3;
+  min-width: 600px;
+  max-width: 700px;
+  height: 500px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    max-width: 100%;
+  }
+
+  .map-container {
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Product Detail Section
+--------------------------------------------------------------*/
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk Gambar Produk */
+.product-image {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.product-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Gaya untuk Informasi Produk */
+.product-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+.product-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 15px;
+}
+
+.product-info .price {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.product-info .description {
+  font-size: 16px;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .product-image img {
+    max-height: 300px;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# Activity Detail Section - Align Top
+--------------------------------------------------------------*/
+
+.activity-detail .row {
+  display: flex;
+  align-items: flex-start; /* Membuat konten utama & sidebar sejajar di atas */
+}
+
+/*--------------------------------------------------------------
+# Activity Detail Section
+--------------------------------------------------------------*/
+
+.activity-detail {
+  padding: 60px 0;
+}
+
+.activity-detail .activity-box.large {
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+}
+
+.activity-detail .activity-box.large img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.activity-detail .activity-info {
+  padding: 20px;
+}
+
+.activity-detail .activity-info h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.activity-detail .activity-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.activity-detail .activity-label1,
+.activity-detail .activity-label2 {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.activity-detail .activity-label1 {
+  background-color: var(--accent-color);
+}
+
+.activity-detail .activity-label2 {
+  background-color: #6c757d;
+}
+
+.activity-detail .activity-desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/*--------------------------------------------------------------
+# Sidebar Activity List
+--------------------------------------------------------------*/
+
+.sidebar-container {
+  align-self: flex-start;
+  margin-top: 0; /* Hapus margin atas agar sejajar */
+}
+
+.sidebar-container .card {
+  border: none;
+  border-radius: 10px;
+}
+
+.sidebar-container .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.activity-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.activity-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.activity-item h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.activity-item p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.activity-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*--------------------------------------------------------------
+# Responsive Design
+--------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+  .activity-detail .activity-info h1 {
+    font-size: 22px;
+  }
+
+  .activity-detail .activity-desc {
+    font-size: 14px;
+  }
+
+  .activity-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
