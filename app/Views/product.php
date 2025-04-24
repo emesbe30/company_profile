@@ -70,7 +70,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <p class="text-center">Produk tidak tersedia saat ini.</p>
+                    <p class="text-center">Produk tidak tersedia saat ini, silahkan kembali lagi nanti.</p>
                 <?php endif; ?>
             </div>
         </div>
