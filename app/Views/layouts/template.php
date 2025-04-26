@@ -50,7 +50,7 @@
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <!-- <h1 class="sitename">Creativenest</h1> -->
-                <img src="<?= base_url('web2bahasa.png'); ?>" alt="CreativeNest Logo">
+                <img src="<?= base_url('LOGO COMPETENT ACADEMY.png'); ?>" alt="CreativeNest Logo">
             </a>
 
             <?= $this->include('layouts/navbar'); ?>
