@@ -141,9 +141,6 @@ $routes->group('id', function ($routes) {
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');
 
-    $routes->get('sertifikasi', 'SertifikasiController::index');
-    $routes->get('pelatihan', 'PelatihanController::index');
-    $routes->get('informasi', 'InformasiController::index');
     $routes->get('jadwal-dan-pendaftaran', 'JadwalPendaftaranController::index');
 });
 
@@ -166,8 +163,5 @@ $routes->group('en', function ($routes) {
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');
 
-    $routes->get('certification', 'SertifikasiController::index');
-    $routes->get('training', 'PelatihanController::index');
-    $routes->get('information', 'InformasiController::index');
     $routes->get('schedule-and-registration', 'JadwalPendaftaranController::index');
 });

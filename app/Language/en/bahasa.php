@@ -25,6 +25,7 @@ return [
     'product' => 'Product',
     'training' => 'Training',
     'information' => 'Information',
+    'schedule-and-registration' => 'Schedule and Registration',
 
     // SLIDER
     'buttonSlider' => 'Contact Us',

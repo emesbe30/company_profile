@@ -25,6 +25,7 @@ return [
     'product' => 'Produk',
     'training' => 'Pelatihan',
     'information' => 'Informasi',
+    'schedule-and-registration' => 'Jadwal dan Pendaftaran',
 
     // SLIDER
     'buttonSlider' => 'Kontak Kami',

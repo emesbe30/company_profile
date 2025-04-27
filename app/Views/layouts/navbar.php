@@ -23,6 +23,7 @@ $contactLink = ($lang_segment === 'en') ? 'contact' : 'kontak';
 $informationLink = ($lang_segment === 'en') ? 'information' : 'informasi';
 $trainingLink = ($lang_segment === 'en') ? 'training' : 'pelatihan';
 $productLink = ($lang_segment === 'en') ? 'product' : 'produk';
+$jadwalpendaftaranLink = ($lang_segment === 'en') ? 'schedule-and-registration' : 'jadwal-dan-pendaftaran';
 
 // Ambil bagian dari URL tanpa segmen bahasa
 array_shift($segments); // Hapus segmen bahasa dari array
@@ -38,6 +39,7 @@ $replace_map = [
     'informasi' => 'information',
     'pelatihan' => 'training',
     'produk' => 'product',
+    'jadwal-dan-pendaftaran' => 'schedule-and-registration',
 ];
 
 foreach ($replace_map as $id => $en) {
@@ -140,6 +142,8 @@ if (!empty($categoriesAktivitas)) {
         </li>
 
         <!-- Aktivitas Dropdown -->
+
+        <li><a href="<?= base_url('/' . $lang . '/' . $jadwalpendaftaranLink); ?>" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'schedule-and-registration' ? 'active' : '' ?>"><?= lang('bahasa.schedule-and-registration'); ?></a></li>
 
         <li><a href="<?= base_url('/' . $lang . '/' . $contactLink); ?>" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'contact' ? 'active' : '' ?>"><?= lang('bahasa.contact'); ?></a></li>
 
