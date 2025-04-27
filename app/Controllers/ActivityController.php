@@ -17,9 +17,9 @@ class ActivityController extends BaseController
 {
     public function index($slugCategory = null)
     {
-        $data['activeMenu'] = 'activity';
+        $data['activeMenu'] = 'training';
         $lang = session()->get('lang') ?? 'id';  // Mendapatkan bahasa aktif dari sesi
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'aktivitas' : 'activity') . '/' . $slugCategory);
+        $canonical = base_url("$lang/" . ($lang === 'id' ? 'pelatihan' : 'training') . '/' . $slugCategory);
 
         if (current_url() !== $canonical) {
             return redirect()->to($canonical);
@@ -41,7 +41,7 @@ class ActivityController extends BaseController
         // Jika kategori tidak ditemukan, redirect ke halaman utama artikel
         if ($slugCategory && !$category) {
             log_message('warning', 'Kategori tidak ditemukan untuk slug: ' . $slugCategory);
-            return redirect()->to(base_url($lang === 'id' ? 'id/aktivitas' : 'en/activity'));
+            return redirect()->to(base_url($lang === 'id' ? 'id/pelatihan' : 'en/training'));
         }
 
         // Validasi slug dan redirect ke slug yang benar jika tidak sesuai dengan bahasa yang dipilih
@@ -51,7 +51,7 @@ class ActivityController extends BaseController
             // Jika slug yang digunakan tidak sesuai, redirect ke slug yang benar
             if ($slugCategory !== $correctSlug) {
                 log_message('info', 'Slug tidak sesuai, mengarahkan ke slug yang benar: ' . $correctSlug);
-                return redirect()->to(base_url($lang === 'id' ? "id/aktivitas/$correctSlug" : "en/activity/$correctSlug"));
+                return redirect()->to(base_url($lang === 'id' ? "id/pelatihan/$correctSlug" : "en/training/$correctSlug"));
             }
         }
 
@@ -113,7 +113,7 @@ class ActivityController extends BaseController
 
     public function detail($categorySlug, $slug)
     {
-        $data['activeMenu'] = 'activity';
+        $data['activeMenu'] = 'training';
         $lang = session()->get('lang') ?? 'id';
 
 

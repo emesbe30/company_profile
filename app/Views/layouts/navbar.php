@@ -20,8 +20,8 @@ if ($lang_segment !== 'en' && $lang_segment !== 'id') {
 $homeLink    = ($lang_segment === 'en') ? '/' : '/';
 $aboutLink   = ($lang_segment === 'en') ? 'about' : 'tentang';
 $contactLink = ($lang_segment === 'en') ? 'contact' : 'kontak';
-$articleLink = ($lang_segment === 'en') ? 'article' : 'artikel';
-$activityLink = ($lang_segment === 'en') ? 'activity' : 'aktivitas';
+$informationLink = ($lang_segment === 'en') ? 'information' : 'informasi';
+$trainingLink = ($lang_segment === 'en') ? 'training' : 'pelatihan';
 $productLink = ($lang_segment === 'en') ? 'product' : 'produk';
 
 // Ambil bagian dari URL tanpa segmen bahasa
@@ -35,8 +35,8 @@ $new_lang = ($lang_segment === 'en') ? 'id' : 'en';
 $replace_map = [
     'tentang' => 'about',
     'kontak' => 'contact',
-    'artikel' => 'article',
-    'aktivitas' => 'activity',
+    'informasi' => 'information',
+    'pelatihan' => 'training',
     'produk' => 'product',
 ];
 
@@ -69,7 +69,7 @@ if (!empty($categories)) {
         $slug = ($lang === 'id') ? $cat['slug_kategori_id'] : $cat['slug_kategori_en'];
         $name = ($lang === 'id') ? $cat['nama_kategori_id'] : $cat['nama_kategori_en'];
         $categoryLinks[] = [
-            'url' => base_url("$lang/$articleLink/$slug"),
+            'url' => base_url("$lang/$informationLink/$slug"),
             'name' => $name
         ];
     }
@@ -82,7 +82,7 @@ if (!empty($categoriesAktivitas)) {
         $slug = ($lang === 'id') ? $cat['slug_kategori_id'] : $cat['slug_kategori_en'];
         $name = ($lang === 'id') ? $cat['nama_kategori_id'] : $cat['nama_kategori_en'];
         $kategoriAktivitasLinks[] = [
-            'url' => base_url("$lang/$activityLink/$slug"),
+            'url' => base_url("$lang/$trainingLink/$slug"),
             'name' => $name
         ];
     }
@@ -105,9 +105,9 @@ if (!empty($categoriesAktivitas)) {
 
         <!-- Aktivitas Dropdown -->
         <li class="dropdown">
-            <a href="#" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'activity' ? 'active' : '' ?>"><?= lang('bahasa.activity'); ?> <i class="bi bi-chevron-down toggle-dropdown "></i></a>
+            <a href="#" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'training' ? 'active' : '' ?>"><?= lang('bahasa.training'); ?> <i class="bi bi-chevron-down toggle-dropdown "></i></a>
             <ul>
-                <li><a class="dropdown-item" href="<?= base_url($lang . '/' . $activityLink) ?>"><?= $lang == 'id' ? 'Semua Aktivitas' : 'All Activity'; ?></a></li>
+                <li><a class="dropdown-item" href="<?= base_url($lang . '/' . $trainingLink) ?>"><?= $lang == 'id' ? 'Semua Pelatihan' : 'All Training'; ?></a></li>
                 <?php if (!empty($kategoriAktivitasLinks)): ?>
                     <?php foreach ($kategoriAktivitasLinks as $categoriAktivitasLink): ?>
                         <li>
@@ -122,9 +122,9 @@ if (!empty($categoriesAktivitas)) {
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'article' ? 'active' : '' ?>"><?= lang('bahasa.article'); ?> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <a href="#" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'information' ? 'active' : '' ?>"><?= lang('bahasa.information'); ?> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-                <li><a class="dropdown-item" href="<?= base_url($lang . '/' . $articleLink) ?>"><?= $lang == 'id' ? 'Semua Artikel' : 'All Articles'; ?></a></li>
+                <li><a class="dropdown-item" href="<?= base_url($lang . '/' . $informationLink) ?>"><?= $lang == 'id' ? 'Semua Informasi' : 'All Information'; ?></a></li>
                 <?php if (!empty($categoryLinks)): ?>
                     <?php foreach ($categoryLinks as $categoryLink): ?>
                         <li>

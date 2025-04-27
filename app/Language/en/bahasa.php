@@ -23,6 +23,8 @@ return [
     'article' => 'Article',
     'activity' => 'Activity',
     'product' => 'Product',
+    'training' => 'Training',
+    'information' => 'Information',
 
     // SLIDER
     'buttonSlider' => 'Contact Us',

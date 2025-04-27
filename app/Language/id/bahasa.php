@@ -23,6 +23,8 @@ return [
     'article' => 'Artikel',
     'activity' => 'Aktivitas',
     'product' => 'Produk',
+    'training' => 'Pelatihan',
+    'information' => 'Informasi',
 
     // SLIDER
     'buttonSlider' => 'Kontak Kami',

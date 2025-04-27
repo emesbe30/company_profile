@@ -126,13 +126,14 @@ $routes->group('id', function ($routes) {
     $routes->get('/', 'Home::index');
     $routes->get('kontak', 'ContactController::index');
     $routes->get('tentang', 'AboutController::index');
-    $routes->get('artikel', 'ArticleeController::index');
-    $routes->get('artikel/(:segment)', 'ArticleeController::index/$1');
-    $routes->get('artikel/(:segment)/(:segment)', 'ArticleeController::detail/$1/$2');
 
-    $routes->get('aktivitas', 'ActivityController::index');
-    $routes->get('aktivitas/(:segment)', 'ActivityController::index/$1');
-    $routes->get('aktivitas/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
+    $routes->get('informasi', 'ArticleeController::index');
+    $routes->get('informasi/(:segment)', 'ArticleeController::index/$1');
+    $routes->get('informasi/(:segment)/(:segment)', 'ArticleeController::detail/$1/$2');
+
+    $routes->get('pelatihan', 'ActivityController::index');
+    $routes->get('pelatihan/(:segment)', 'ActivityController::index/$1');
+    $routes->get('pelatihan/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
     $routes->get('produk', 'ProductController::index');
     $routes->get('produk/(:segment)', 'ProductController::detail/$1');
@@ -150,13 +151,14 @@ $routes->group('en', function ($routes) {
     $routes->get('/', 'Home::index');
     $routes->get('contact', 'ContactController::index');
     $routes->get('about', 'AboutController::index');
-    $routes->get('article', 'ArticleeController::index');
-    $routes->get('article/(:segment)', 'ArticleeController::index/$1');
-    $routes->get('article/(:segment)/(:segment)', 'ArticleeController::detail/$1/$2');
 
-    $routes->get('activity', 'ActivityController::index');
-    $routes->get('activity/(:segment)', 'ActivityController::index/$1');
-    $routes->get('activity/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
+    $routes->get('information', 'ArticleeController::index');
+    $routes->get('information/(:segment)', 'ArticleeController::index/$1');
+    $routes->get('information/(:segment)/(:segment)', 'ArticleeController::detail/$1/$2');
+
+    $routes->get('training', 'ActivityController::index');
+    $routes->get('training/(:segment)', 'ActivityController::index/$1');
+    $routes->get('training/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
     $routes->get('product', 'ProductController::index');
     $routes->get('product/(:segment)', 'ProductController::detail/$1');

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.article')); ?>
+                    <?= esc(lang('bahasa.information')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <?= esc(lang('bahasa.article')); ?>
+                            <?= esc(lang('bahasa.information')); ?>
                         </li>
                     </ol>
                 </nav>
@@ -43,7 +43,7 @@
                     <div class="main-articles">
                         <?php foreach ($allArticle as $article): ?>
                         <div class="card mb-4">
-                            <img src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" 
+                            <img src="<?= base_url('assets/img/information/' . $article['foto_artikel']); ?>" 
                                  class="card-img-top" 
                                  alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>"
                                  loading="lazy">
@@ -66,8 +66,8 @@
                                 </p>
                                 <a href="<?= base_url(
                                     $lang === 'id'
-                                        ? 'id/artikel/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                        : 'en/article/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
+                                        ? 'id/information/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                        : 'en/information/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
                                 ); ?>" class="btn btn-primary">
                                     <?= lang('bahasa.buttonArticle'); ?>
                                 </a>
@@ -95,10 +95,10 @@
                     <div class="list-group">
                         <?php foreach ($sideArticle as $article): ?>
                         <a href="<?= base_url($lang == 'id'
-                                        ? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
-                                        : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>" 
+                                        ? 'id/information/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
+                                        : 'en/information/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>" 
                            class="list-group-item list-group-item-action d-flex align-items-start">
-                            <img src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" 
+                            <img src="<?= base_url('assets/img/information/' . $article['foto_artikel']); ?>" 
                                  class="article-thumbnail me-3" 
                                  alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>"
                                  loading="lazy">

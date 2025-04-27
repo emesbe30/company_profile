@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.activity')); ?>
+                    <?= esc(lang('bahasa.training')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <?= esc(lang('bahasa.activity')); ?>
+                            <?= esc(lang('bahasa.training')); ?>
                         </li>
                     </ol>
                 </nav>
@@ -47,10 +47,10 @@
                                 <div class="activity-box">
                                     <a href="<?= base_url(
                                                     $lang === 'id'
-                                                        ? 'id/aktivitas/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
-                                                        : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
+                                                        ? 'id/pelatihan/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
+                                                        : 'en/training/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
                                                 ); ?>">
-                                        <img src="<?= base_url('assets/img/aktivitas/' . esc($p["foto_aktivitas"])); ?>"
+                                        <img src="<?= base_url('assets/img/pelatihan/' . esc($p["foto_aktivitas"])); ?>"
                                             class="img-fluid"
                                             alt="<?= esc($lang == 'id' ? $p['alt_aktivitas_id'] : $p['alt_aktivitas_en']); ?>"
                                             style="object-fit: cover; height: 250px; width: 100%;"
