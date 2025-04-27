@@ -16,7 +16,7 @@ class ArticleeController extends BaseController
 {
     public function index($slugCategory = null)
     {
-        $data['activeMenu'] = 'article';
+        $data['activeMenu'] = 'information';
         $lang = session()->get('lang') ?? 'id'; // Mendapatkan bahasa aktif dari sesi
 
         // Inisialisasi model
@@ -34,7 +34,7 @@ class ArticleeController extends BaseController
 
         // $categorySlugCheck = ($lang === 'id') ? $category['slug_kategori_id'] : $category['slug_kategori_en'];
 
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'artikel' : 'article') . '/' . $slugCategory);
+        $canonical = base_url("$lang/" . ($lang === 'id' ? 'informasi' : 'information') . '/' . $slugCategory);
 
         if (current_url() !== $canonical) {
             return redirect()->to($canonical);
@@ -43,7 +43,7 @@ class ArticleeController extends BaseController
         // Jika kategori tidak ditemukan, redire    ct ke halaman utama artikel
         if ($slugCategory && !$category) {
             log_message('warning', 'Kategori tidak ditemukan untuk slug: ' . $slugCategory);
-            return redirect()->to(base_url($lang === 'id' ? 'id/artikel' : 'en/article'));
+            return redirect()->to(base_url($lang === 'id' ? 'id/informasi' : 'en/information'));
         }
 
         // Validasi slug dan redirect ke slug yang benar jika tidak sesuai dengan bahasa yang dipilih
@@ -53,7 +53,7 @@ class ArticleeController extends BaseController
             // Jika slug yang digunakan tidak sesuai, redirect ke slug yang benar
             if ($slugCategory !== $correctSlug) {
                 log_message('info', 'Slug tidak sesuai, mengarahkan ke slug yang benar: ' . $correctSlug);
-                return redirect()->to(base_url($lang === 'id' ? "id/artikel/$correctSlug" : "en/article/$correctSlug"));
+                return redirect()->to(base_url($lang === 'id' ? "id/informasi/$correctSlug" : "en/information/$correctSlug"));
             }
         }
 
@@ -123,7 +123,7 @@ class ArticleeController extends BaseController
 
     public function detail($categorySlug, $slug)
     {
-        $data['activeMenu'] = 'article';
+        $data['activeMenu'] = 'information';
         $lang = session()->get('lang') ?? 'id'; // cek lang nya
 
         // Menambahkan log untuk melacak nilai slug yang diterima
