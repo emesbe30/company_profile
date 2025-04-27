@@ -731,6 +731,7 @@ section,
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
+  padding: 0 20px;
 }
 
 .hero h2 {
@@ -750,12 +751,17 @@ section,
   animation: fadeInDown 1s both 0.2s;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
 
   .hero h2,
   .hero p {
     max-width: 60%;
   }
+
+  .hero .carousel-container {
+    padding: 0 80px; /* <<< Tambahkan padding lebih besar di layar besar */
+  }
+
 }
 
 .hero .btn-get-started {
