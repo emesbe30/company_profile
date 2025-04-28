@@ -76,26 +76,26 @@
                 <div class="form-container">
                     <h3 class="text-center mb-4">Pendaftaran Pelatihan</h3>
                     <form action="POST">
-                        <label for="nama1">Nama :</label>
+                        <label for="nama1"><span style="color: red;">*</span>Nama :</label>
                         <input type="text" name="nama1" id="nama1" required>
 
-                        <label for="domisili1">Kota Domisili :</label>
+                        <label for="domisili1"><span style="color: red;">*</span>Kota Domisili :</label>
                         <input type="text" name="domisili1" id="domisili1" required>
 
-                        <label for="no_tlp1">No Telepon / Whatsapp :</label>
+                        <label for="no_tlp1"><span style="color: red;">*</span>No Telepon / Whatsapp :</label>
                         <input type="text" name="no_tlp1" id="no_tlp1" required>
 
-                        <label for="email1">Alamat Email :</label>
+                        <label for="email1"><span style="color: red;">*</span>Alamat Email :</label>
                         <input type="text" name="email1" id="email1" required>
 
-                        <label for="jadwal1">Jadwal Pelatihan :</label>
+                        <label for="jadwal1"><span style="color: red;">*</span>Jadwal Pelatihan :</label>
                         <select name="jadwal1" id="jadwal1">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                         </select>
 
-                        <label>Mengetahui Competent Academy dari mana :</label>
+                        <label><span style="color: red;">*</span>Mengetahui Competent Academy dari mana :</label>
                         <div>
                             <input type="radio" name="survey1" value="website"> Website <br>
                             <input type="radio" name="survey1" value="ig"> Instagram <br>
@@ -123,26 +123,26 @@
                 <div class="form-container">
                     <h3 class="text-center mb-4">Pendaftaran Sertifikasi</h3>
                     <form action="POST">
-                        <label for="nama2">Nama :</label>
+                        <label for="nama2"><span style="color: red;">*</span>Nama :</label>
                         <input type="text" name="nama2" id="nama2" required>
 
-                        <label for="domisili2">Kota Domisili :</label>
+                        <label for="domisili2"><span style="color: red;">*</span>Kota Domisili :</label>
                         <input type="text" name="domisili2" id="domisili2" required>
 
-                        <label for="no_tlp2">No Telepon / Whatsapp :</label>
+                        <label for="no_tlp2"><span style="color: red;">*</span>No Telepon / Whatsapp :</label>
                         <input type="text" name="no_tlp2" id="no_tlp2" required>
 
-                        <label for="email2">Alamat Email :</label>
+                        <label for="email2"><span style="color: red;">*</span>Alamat Email :</label>
                         <input type="text" name="email2" id="email2" required>
 
-                        <label for="jadwal2">Jadwal Sertifikasi :</label>
+                        <label for="jadwal2"><span style="color: red;">*</span>Jadwal Sertifikasi :</label>
                         <select name="jadwal2" id="jadwal2">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                         </select>
 
-                        <label>Mengetahui Competent Academy dari mana :</label>
+                        <label><span style="color: red;">*</span>Mengetahui Competent Academy dari mana :</label>
                         <div>
                             <input type="radio" name="survey2" value="website"> Website <br>
                             <input type="radio" name="survey2" value="ig"> Instagram <br>
