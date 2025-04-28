@@ -2,13 +2,43 @@
 
 <?= $this->section('content'); ?>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: [ //YYYY-MM-DD format
+                {
+                    title: 'Event 1',
+                    start: '2025-04-23'
+                },
+                {
+                    title: 'Event 2',
+                    start: '2025-04-25',
+                    end: '2025-04-27'
+                },
+                {
+                    title: 'Event 3',
+                    start: '2025-04-27',
+                }
+            ]
+        });
+        calendar.render();
+    });
+</script>
+
 <!-- Page Header Start -->
 <div class="container-fluid page-header d-flex align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.product')); ?>
+                    <?= esc(lang('bahasa.schedule-and-registration')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -16,7 +46,7 @@
                             <a href="<?= base_url($lang . '/') ?>"> <?= esc(lang('bahasa.home')); ?> </a>
                         </li>
                         <li class="breadcrumb-item text-white active" aria-current="page">
-                            <?= esc(lang('bahasa.product')); ?>
+                            <?= esc(lang('bahasa.schedule-and-registration')); ?>
                         </li>
                     </ol>
                 </nav>
@@ -38,40 +68,10 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                <?php
-                // Pastikan $product adalah array sebelum melakukan usort
-                if (!empty($product) && is_array($product)) {
-                    usort($product, function ($a, $b) {
-                        return strtotime($b['updated_at']) - strtotime($a['updated_at']);
-                    });
-                } else {
-                    echo "<p>Produk tidak tersedia.</p>";
-                }
-                ?>
-                <?php if (!empty($product)) : ?>
-                    <?php foreach ($product as $p) : ?>
-                        <div class="col-lg-4 col-md-6 product-item isotope-item">
-                            <div class="product-content">
-                                <a href="<?= base_url($lang == 'id'
-                                                ? 'id/produk/produk-detail/' . esc($p['slug_id'])
-                                                : 'en/product/product-detail/' . esc($p['slug_en'])); ?>">
-                                    <img src="<?= base_url('assets/img/produk/' . esc($p["foto_produk"])); ?>"
-                                        class="img-fluid"
-                                        alt="<?= esc($lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']); ?>" />
-                                </a>
-                                <div class="product-info">
-                                    <h4>
-                                        <a href="<?= base_url($lang == 'id' ? 'id/produk/' . $p['slug_id'] : 'en/product/' . $p['slug_en']); ?>" class="produk-card-title">
-                                            <?= $lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']; ?>
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <p class="text-center">Produk tidak tersedia saat ini, silahkan kembali lagi nanti.</p>
-                <?php endif; ?>
+
+            <div id="calendar"></div>
+                </div>
+
             </div>
         </div>
 </section>

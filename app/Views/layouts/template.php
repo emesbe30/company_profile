@@ -32,6 +32,8 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.css'); ?>" rel="stylesheet">
 
+    <script src="<?= base_url('assets/vendor/fullcalendar/dist/index.global.min.js'); ?>"></script>
+
     <!-- =======================================================
   * Template Name: iLanding
   * Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/

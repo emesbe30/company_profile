@@ -135,13 +135,15 @@ $routes->group('id', function ($routes) {
     $routes->get('pelatihan/(:segment)', 'ActivityController::index/$1');
     $routes->get('pelatihan/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
+    $routes->get('jadwal-dan-pendaftaran', 'JadwalPendaftaranController::index');
+
     $routes->get('produk', 'ProductController::index');
     $routes->get('produk/(:segment)', 'ProductController::detail/$1');
     $routes->get('(:segment)', 'ContentController::index');
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');
 
-    $routes->get('jadwal-dan-pendaftaran', 'JadwalPendaftaranController::index');
+
 });
 
 $routes->group('en', function ($routes) {
@@ -157,11 +159,13 @@ $routes->group('en', function ($routes) {
     $routes->get('training/(:segment)', 'ActivityController::index/$1');
     $routes->get('training/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
+    $routes->get('schedule-and-registration', 'JadwalPendaftaranController::index');
+
     $routes->get('product', 'ProductController::index');
     $routes->get('product/(:segment)', 'ProductController::detail/$1');
     $routes->get('(:segment)', 'ContentController::index');
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');
 
-    $routes->get('schedule-and-registration', 'JadwalPendaftaranController::index');
+
 });

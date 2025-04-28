@@ -138,7 +138,7 @@
 <!-- /Product Section -->
 
 
-<!-- Activities Section -->
+<!-- Training Section -->
 <section id="activities" class="activities section light-background">
     <div class="container">
         <div class="row gy-3">
@@ -156,9 +156,9 @@
                             <div class="col-md-4">
                                 <div class="activity-box" data-aos="fade-up" data-aos-delay="100">
                                     <a href="<?= base_url($lang == 'id'
-                                                    ? 'id/aktivitas/' . esc($p['slug_aktivitas_id'])
-                                                    : 'en/activity/' . esc($p['slug_aktivitas_en'])); ?>">
-                                        <img src="<?= base_url('assets/img/aktivitas/' . esc($p['foto_aktivitas'])); ?>"
+                                                    ? 'id/pelatihan/' . esc($p['slug_aktivitas_id'])
+                                                    : 'en/training/' . esc($p['slug_aktivitas_en'])); ?>">
+                                        <img src="<?= base_url('assets/img/pelatihan/' . esc($p['foto_aktivitas'])); ?>"
                                             class="img-fluid"
                                             alt="<?= esc($lang == 'id' ? $p['alt_aktivitas_id'] : $p['alt_aktivitas_en']); ?>"
                                             style="height: 250px; object-fit: cover;">
@@ -180,7 +180,7 @@
 
             <!-- Button Lihat Semua -->
             <div class="text-center mt-4">
-                <a href="<?= base_url($lang == 'id' ? 'id/aktivitas' : 'en/activity'); ?>" class="read-more">
+                <a href="<?= base_url($lang == 'id' ? 'id/pelatihan' : 'en/training'); ?>" class="read-more">
                     <?= lang('bahasa.buttonArticle'); ?> <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
@@ -191,7 +191,7 @@
 <!-- /Activities Section -->
 
 
-<!-- Articles Section -->
+<!-- Informasi Section -->
 <section id="articles" class="articles section light-background">
     <div class="container">
         <!-- Judul Section -->

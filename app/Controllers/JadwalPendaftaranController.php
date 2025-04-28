@@ -2,67 +2,70 @@
 
 namespace App\Controllers;
 
+use App\Models\MetaModel;
 use App\Controllers\BaseController;
 use App\Models\CategoryActivityModel;
 use App\Models\CategoryArtikelModel;
 use App\Models\KontakModel;
 use App\Models\MarketplaceModel;
-use App\Models\MetaModel;
 use App\Models\ProfilModel;
 use App\Models\SosmedModel;
 
 class JadwalPendaftaranController extends BaseController
 {
+    protected $lang;
+    protected $uri;
+
+    public function __construct()
+    {
+        $this->lang = session()->get('lang') ?? 'id';
+        $this->uri = service('uri');
+    }
+
     public function index()
     {
+
+        $canonical = base_url("$this->lang/" . ($this->lang === 'id' ? 'jadwal-dan-pendaftaran' : 'schedule-and-registration'));
+
+        // Jika URL saat ini tidak sama dengan canonical, lakukan redirect
+        // if (current_url() !== $canonical) {
+        //     return redirect()->to($canonical);
+        // }
+        // Set menu aktif
+        $data['activeMenu'] = 'schedule-and-registration';
+
+        // Instansiasi model yang dibutuhkan
         $metaModel = new MetaModel();
-        $lang = session()->get('lang') ?? 'id';
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'jadwal-dan-pendaftaran' : 'schedule-and-registration'));
-
-        // Tentukan segment URL berdasarkan bahasa
-        $productSegment = ($lang === 'id') ? 'jadwal-dan-pendaftaran' : 'schedule-and-registration';
-
+        $kontakModel = new KontakModel();
         $profilModel = new ProfilModel();
-        $dataProfil = $profilModel->first();
-
         $kategoriModel = new CategoryArtikelModel();
+        $sosmedModel = new SosmedModel();
+        $marketplaceModel = new MarketplaceModel();
+        $kategoriAktivitasModel = new CategoryActivityModel();
+
+        // Ambil data dari database
+        $dataMeta = $metaModel->where('id_meta', '10')->first();
+        $dataKontak = $kontakModel->first();
+        $dataProfil = $profilModel->first();
         $kategoriTeratas = $kategoriModel->getKategoriTerbanyak();
         $categories = $kategoriModel->findAll();
-
-        $kategoriAktivitasModel = new CategoryActivityModel();
+        $sosmed = $sosmedModel->findAll();
+        $marketplace = $marketplaceModel->findAll();
         $categoriesAktivitas = $kategoriAktivitasModel->findAll();
 
-        // Ambil metadata halaman
-        $dataMeta = $metaModel->where('id_meta', '10')->first();
-
-        // Ambil data sosial media
-        $sosmedModel = new SosmedModel();
-        $sosmed = $sosmedModel->findAll();
-
-        // Ambil data marketplace
-        $marketplaceModel = new MarketplaceModel();
-        $marketplace = $marketplaceModel->findAll();
-
-        // Ambil data kontak
-        $kontakModel = new KontakModel();
-        $kontak = $kontakModel->first();
-
-
-        $data = [
-            'lang' => $lang,
-            'meta' => $dataMeta,
+        // Kirim data ke view
+        return view('jadwal_pendaftaran', [
             'canonical' => $canonical,
-            'productLink' => $productSegment,
-            'activeMenu' => 'schedule-and-registration',
+            'meta' => $dataMeta,
+            'kontak' => $dataKontak,
+            'lang' => $this->lang,
+            'data' => $data,
             'profil' => $dataProfil,
             'kategori_teratas' => $kategoriTeratas,
             'sosmed' => $sosmed,
             'marketplace' => $marketplace,
-            'kontak' => $kontak,
             'categories' => $categories,
-            'categoriesAktivitas' => $categoriesAktivitas,
-        ];
-
-        return view('jadwal_pendaftaran.php', $data);
+            'categoriesAktivitas' => $categoriesAktivitas
+        ]);
     }
 }
