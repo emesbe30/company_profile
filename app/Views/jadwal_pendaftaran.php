@@ -34,7 +34,7 @@
 <div class="container-fluid page-header d-flex align-items-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
                     <?= esc(lang('bahasa.schedule-and-registration')); ?>
                 </h2>
@@ -52,6 +52,7 @@
         </div>
     </div>
 </div>
+
 <!-- Page Header End -->
 
 <!-- Jadwal Section -->
