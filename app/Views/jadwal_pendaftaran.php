@@ -72,6 +72,43 @@
             <div id="calendar"></div>
                 </div>
 
+            <div class="">
+                <form action="POST">
+                    <label for="nama">Nama :</label>
+                    <input type="text" name="nama" id="nama" required><br>
+                    <label for="domisili">Kota Domisili :</label>
+                    <input type="text" name="domisili" id="domisili" required><br>
+                    <label for="no_tlp">No Telepon / Whatsapp :</label>
+                    <input type="text" name="no_tlp" id="no_tlp" required><br>
+                    <label for="email">Alamat Email :</label>
+                    <input type="text" name="email" id="email" required><br>
+                    <label for="jadwal">Jadwal Pelatihan :</label>
+                    <select name="jadwal" id="jadwal">
+                        <!-- Nanti disini pake php foreach setelah tabel sudah selesai dibuat -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br>
+                    <label for="survey">Mengetahui Competent Academy dari mana :</label><br>
+                    <input type="radio" name="survey" id="survey" value="website"> Website <br>
+                    <input type="radio" name="survey" id="survey" value="ig"> Instagram <br>
+                    <input type="radio" name="survey" id="survey" value="tiktok"> Tiktok <br>
+                    <input type="radio" name="survey" id="survey" value="fb"> Facebook <br>
+                    <input type="radio" name="survey" id="survey" value="linkedin"> LinkedIn <br>
+                    <input type="radio" name="survey" id="survey" value="yt"> Youtube <br>
+                    <input type="radio" name="survey" id="survey" value="iklan"> Iklan <br>
+                    <input type="radio" name="survey" id="survey" value="group_wa"> Group Whatsapp <br>
+                    <input type="radio" name="survey" id="survey" value="chat_wa"> Chat Whatsapp <br>
+                    <input type="radio" name="survey" id="survey" value="pelatihan"> Pelatihan <br>
+                    <input type="radio" name="survey" id="survey" value="teman"> Teman <br>
+                    <input type="radio" name="survey" id="survey" value="brosur"> Brosur <br>
+                    <input type="radio" name="survey" id="survey" value="voucher"> Voucher <br>
+                    <input type="radio" name="survey" id="survey" value="pameran"> Pameran <br>
+                    <input type="radio" name="survey" id="survey" value="lainnya"> Lainnya <br>
+                    <input type="submit" name="submit" id="submit" value="Kirim">
+                </form>
+            </div>
+
             </div>
         </div>
 </section>
