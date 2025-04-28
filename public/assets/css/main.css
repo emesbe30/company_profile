@@ -2028,3 +2028,118 @@ section,
 }
 
 
+/* Section Jadwal */
+#jadwal {
+  padding: 60px 0;
+}
+
+/* Layout Flexbox untuk Kalender dan Form */
+#jadwal .isotope-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Kalender Styling */
+#calendar {
+  flex: 1 1 45%;
+  max-width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 40px;
+}
+
+/* Judul Kalender */
+.fc-toolbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Tombol Kalender */
+.fc-button {
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.fc-button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Form Container Styling */
+#jadwal .form-container {
+  flex: 1 1 45%;
+  max-width: 600px;
+  margin: 30px auto;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+#jadwal form label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #333;
+}
+
+#jadwal form input[type="text"],
+#jadwal form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#jadwal form input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Tombol Submit */
+#jadwal form input[type="submit"] {
+  background: var(--accent-color);
+  color: var(--surface-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#jadwal form input[type="submit"]:hover {
+  background: var(--surface-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive untuk Mobile */
+@media (max-width: 768px) {
+  #jadwal .isotope-container {
+    flex-direction: column;
+  }
+
+  #calendar,
+  #jadwal .form-container {
+    flex: 1 1 100%;
+  }
+}
