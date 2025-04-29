@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.activity')); ?>
+                    <?= esc(lang('bahasa.training')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -18,12 +18,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <a href="<?= base_url($lang . '/activity') ?>">
-                                <?= esc(lang('bahasa.activity')); ?>
+                            <a href="<?= base_url($lang . '/training') ?>">
+                                <?= esc(lang('bahasa.training')); ?>
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <?= $lang == 'id' ? 'Detail Aktivitas' : 'Activity Detail'; ?>
+                            <?= $lang == 'id' ? 'Detail Pelatihan' : 'Training Detail'; ?>
                         </li>
                     </ol>
                 </nav>
@@ -48,7 +48,7 @@
                     <!-- Aktivitas Utama -->
                     <div class="col-lg-8">
                         <div class="main-activity" data-aos="fade-up" data-aos-delay="200">
-                            <img src="<?= base_url('assets/img/aktivitas/' . $aktivitas['foto_aktivitas']); ?>"
+                            <img src="<?= base_url('assets/img/pelatihan/' . $aktivitas['foto_aktivitas']); ?>"
                                 alt="<?= $lang == 'id' ? $aktivitas['alt_aktivitas_id'] : $aktivitas['alt_aktivitas_en']; ?>"
                                 class="img-fluid services-img">
 
@@ -68,16 +68,16 @@
                     <!-- Sidebar Aktivitas Lainnya -->
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-box">
-                            <h4><?= $lang == 'id' ? 'Aktivitas Lainnya' : 'Related Activities'; ?></h4>
+                            <h4><?= $lang == 'id' ? 'Pelatihan Lainnya' : 'Related Trainings'; ?></h4>
 
                             <div class="services-list">
                                 <?php if (!empty($sideActivity)): ?>
                                     <?php foreach ($sideActivity as $activity): ?>
                                         <a href="<?= base_url($lang == 'id'
-                                                        ? 'id/aktivitas/' . $activity['slug_kategori_id'] . '/' . $activity['slug_aktivitas_id']
-                                                        : 'en/activity/' . $activity['slug_kategori_en'] . '/' . $activity['slug_aktivitas_en']); ?>"
+                                                        ? 'id/pelatihan/' . $activity['slug_kategori_id'] . '/' . $activity['slug_aktivitas_id']
+                                                        : 'en/training/' . $activity['slug_kategori_en'] . '/' . $activity['slug_aktivitas_en']); ?>"
                                             class="d-flex align-items-center mb-3">
-                                            <img src="<?= base_url('assets/img/aktivitas/' . $activity['foto_aktivitas']); ?>"
+                                            <img src="<?= base_url('assets/img/pelatihan/' . $activity['foto_aktivitas']); ?>"
                                                 alt="<?= $lang == 'id' ? $activity['alt_aktivitas_id'] : $activity['alt_aktivitas_en']; ?>"
                                                 class="img-fluid me-3"
                                                 style="width: 100px; height: 80px; object-fit: cover; border-radius: 5%;">
@@ -90,7 +90,7 @@
                                         </a>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <p class="text-muted"><?= $lang == 'id' ? 'Tidak ada aktivitas terkait.' : 'No related activities found.'; ?></p>
+                                    <p class="text-muted"><?= $lang == 'id' ? 'Tidak ada pelatihan terkait.' : 'No related trainings found.'; ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>

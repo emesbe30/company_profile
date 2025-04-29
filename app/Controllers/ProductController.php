@@ -23,13 +23,13 @@ class ProductController extends BaseController
         $productModel = new ProductModel();
         $lang = session()->get('lang') ?? 'id';
 
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'produk' : 'product'));
+        $canonical = base_url("$lang/" . ($lang === 'id' ? 'sertifikasi-bnsp' : 'bnsp-certification'));
 
         // if (current_url() !== $canonical) {
         //     return redirect()->to($canonical);
         // }
         // Tentukan segment URL berdasarkan bahasa
-        $productSegment = ($lang === 'id') ? 'produk' : 'product';
+        $productSegment = ($lang === 'id') ? 'sertifikasi-bnsp' : 'bnsp-certification';
 
 
 
@@ -135,7 +135,7 @@ class ProductController extends BaseController
 
         $slugCheck = ($lang === 'id') ? $product['slug_id'] : $product['slug_en'];
 
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'produk' : 'product') . '/' . $slugCheck);
+        $canonical = base_url("$lang/" . ($lang === 'id' ? 'sertifikasi-bnsp' : 'bnsp-certification') . '/' . $slugCheck);
 
         if (current_url() !== $canonical) {
             return redirect()->to($canonical);

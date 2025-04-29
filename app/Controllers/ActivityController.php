@@ -187,7 +187,7 @@ class ActivityController extends BaseController
             $categorySlug = $lang === 'id' ? $category['slug_kategori_id'] : $category['slug_kategori_en'];
             // Redirect ke URL yang benar
             $correctedSlug = $lang === 'id' ? $aktivitas['slug_aktivitas_id'] : $aktivitas['slug_aktivitas_en'];
-            $urlmenu = $lang === 'id' ? 'aktivitas' : 'activity';
+            $urlmenu = $lang === 'id' ? 'pelatihan' : 'training';
 
             return redirect()->to("$lang/$urlmenu/$categorySlug/$correctedSlug");
         }
@@ -205,7 +205,7 @@ class ActivityController extends BaseController
 
         $categorySlugCheck = ($lang === 'id') ? $category['slug_kategori_id'] : $category['slug_kategori_en'];
         $slugCheck = ($lang === 'id') ? $aktivitas['slug_aktivitas_id'] : $aktivitas['slug_aktivitas_en'];
-        $canonical = base_url("$lang/" . ($lang === 'id' ? 'aktivitas' : 'activity') . '/' . ($categorySlugCheck !== false ? $categorySlugCheck : '') . '/' . ($slugCheck !== false ? $slugCheck : ''));
+        $canonical = base_url("$lang/" . ($lang === 'id' ? 'pelatihan' : 'training') . '/' . ($categorySlugCheck !== false ? $categorySlugCheck : '') . '/' . ($slugCheck !== false ? $slugCheck : ''));
 
         if (current_url() !== $canonical) {
             return redirect()->to($canonical);

@@ -26,6 +26,7 @@ return [
     'training' => 'Pelatihan',
     'information' => 'Informasi',
     'schedule-and-registration' => 'Jadwal dan Pendaftaran',
+    'bnsp-certification' => 'Sertifikasi BNSP',
 
     // SLIDER
     'buttonSlider' => 'Kontak Kami',

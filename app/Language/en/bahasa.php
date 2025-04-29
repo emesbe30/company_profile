@@ -26,6 +26,7 @@ return [
     'training' => 'Training',
     'information' => 'Information',
     'schedule-and-registration' => 'Schedule and Registration',
+    'bnsp-certification' => 'BNSP Certification',
 
     // SLIDER
     'buttonSlider' => 'Contact Us',

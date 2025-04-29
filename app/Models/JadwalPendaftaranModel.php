@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class JadwalPelatihanModel extends Model
+class JadwalPendaftaranModel extends Model
 {
-    protected $table            = 'jadwalpelatihans';
+    protected $table            = 'jadwalpendaftarans';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.product')); ?>
+                    <?= esc(lang('bahasa.bnsp-certification')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -18,14 +18,14 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <a href="<?= base_url($lang . '/product') ?>">
-                                <?= esc(lang('bahasa.product')); ?>
+                            <a href="<?= base_url($lang . '/bnsp-certification') ?>">
+                                <?= esc(lang('bahasa.bnsp-certification')); ?>
                             </a>
 
                         </li>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <?= $lang == 'id' ? 'Detail Produk' : 'Product Detail'; ?>
+                            <?= $lang == 'id' ? 'Detail Sertifikasi' : 'Certification Detail'; ?>
                         </li>
                     </ol>
                 </nav>
@@ -49,7 +49,7 @@
 
                         <!-- Gambar Produk -->
                         <div class="col-12">
-                            <img src="<?= base_url('assets/img/produk/' . $product["foto_produk"]) ?>"
+                            <img src="<?= base_url('assets/img/sertifikasi/' . $product["foto_produk"]) ?>"
                                 alt="<?= esc($lang == 'id' ? $product['alt_produk_id'] : $product['alt_produk_en']); ?>"
                                 class="img-fluid rounded-top w-100"
                                 style="object-fit: cover; max-height: 400px;">

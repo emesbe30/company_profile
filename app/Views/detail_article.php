@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.article')); ?>
+                    <?= esc(lang('bahasa.information')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -18,14 +18,14 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <a href="<?= base_url($lang . '/article') ?>">
-                                <?= esc(lang('bahasa.article')); ?>
+                            <a href="<?= base_url($lang . '/information') ?>">
+                                <?= esc(lang('bahasa.information')); ?>
                             </a>
 
                         </li>
                         </li>
                         <li class="breadcrumb-item active text-white" aria-current="page">
-                            <?= $lang == 'id' ? 'Detail Artikel' : 'Article Detail'; ?>
+                            <?= $lang == 'id' ? 'Informasi' : 'Information'; ?>
                         </li>
                     </ol>
                 </nav>
@@ -47,7 +47,7 @@
                 <!-- Artikel Utama -->
                 <div class="col-lg-8">
                     <div class="main-article" data-aos="fade-up" data-aos-delay="200">
-                        <img src="<?= base_url('assets/img/artikel/' . $artikel['foto_artikel']); ?>"
+                        <img src="<?= base_url('assets/img/information/' . $artikel['foto_artikel']); ?>"
                             alt="<?= $lang == 'id' ? $artikel['alt_artikel_id'] : $artikel['alt_artikel_en']; ?>"
                             class="img-fluid services-img">
 
@@ -67,15 +67,15 @@
                 <!-- Sidebar Artikel Lainnya -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="artikel-box">
-                        <h4><?= $lang == 'id' ? 'Artikel Lainnya' : 'Related Articles'; ?></h4>
+                        <h4><?= $lang == 'id' ? 'Informasi Lainnya' : 'Related Information'; ?></h4>
                         <div class="list-group">
                             <?php if (!empty($sideArticle) && is_array($sideArticle)): ?>
                                 <?php foreach ($sideArticle as $article): ?>
                                     <a href="<?= base_url($lang == 'id'
-                                                    ? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
-                                                    : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>"
+                                                    ? 'id/informasi/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
+                                                    : 'en/information/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>"
                                         class="d-flex align-items-center mb-3">
-                                        <img src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>"
+                                        <img src="<?= base_url('assets/img/information/' . $article['foto_artikel']); ?>"
                                             alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>"
                                             class="img-fluid me-3"
                                             style="width: 100px; height: 80px; object-fit: cover; border-radius: 5%;" loading="lazy">
@@ -88,7 +88,7 @@
                                     </a>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <p class="text-muted"><?= $lang == 'id' ? 'Tidak ada artikel terkait.' : 'No related articles found.'; ?></p>
+                                <p class="text-muted"><?= $lang == 'id' ? 'Tidak ada informasi terkait.' : 'No related information found.'; ?></p>
                             <?php endif; ?>
                         </div>
                     </div>

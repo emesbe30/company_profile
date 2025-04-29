@@ -51,8 +51,8 @@
                                 <h5 class="card-title">
                                     <a href="<?= base_url(
                                         $lang === 'id'
-                                            ? 'id/artikel/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                            : 'en/article/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
+                                            ? 'id/informasi/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                            : 'en/information/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
                                     ); ?>">
                                         <?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?>
                                     </a>

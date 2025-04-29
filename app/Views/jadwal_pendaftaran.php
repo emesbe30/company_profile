@@ -75,7 +75,7 @@
             <div class="col-md-6">
                 <div class="form-container">
                     <h3 class="text-center mb-4">Pendaftaran Pelatihan</h3>
-                    <form action="POST">
+                    <form action="<?= base_url('admin/artikel/proses_tambah') ?>" method="POST">
                         <label for="nama1"><span style="color: red;">*</span>Nama :</label>
                         <input type="text" name="nama1" id="nama1" required>
 
@@ -97,21 +97,21 @@
 
                         <label><span style="color: red;">*</span>Mengetahui Competent Academy dari mana :</label>
                         <div>
-                            <input type="radio" name="survey1" value="website"> Website <br>
-                            <input type="radio" name="survey1" value="ig"> Instagram <br>
-                            <input type="radio" name="survey1" value="tiktok"> Tiktok <br>
-                            <input type="radio" name="survey1" value="fb"> Facebook <br>
-                            <input type="radio" name="survey1" value="linkedin"> LinkedIn <br>
-                            <input type="radio" name="survey1" value="yt"> Youtube <br>
-                            <input type="radio" name="survey1" value="iklan"> Iklan <br>
-                            <input type="radio" name="survey1" value="group_wa"> Group Whatsapp <br>
-                            <input type="radio" name="survey1" value="chat_wa"> Chat Whatsapp <br>
-                            <input type="radio" name="survey1" value="pelatihan"> Pelatihan <br>
-                            <input type="radio" name="survey1" value="teman"> Teman <br>
-                            <input type="radio" name="survey1" value="brosur"> Brosur <br>
-                            <input type="radio" name="survey1" value="voucher"> Voucher <br>
-                            <input type="radio" name="survey1" value="pameran"> Pameran <br>
-                            <input type="radio" name="survey1" value="lainnya"> Lainnya <br>
+                            <input type="radio" name="survey1" id="survey1" value="website"> Website <br>
+                            <input type="radio" name="survey1" id="survey1" value="ig"> Instagram <br>
+                            <input type="radio" name="survey1" id="survey1" value="tiktok"> Tiktok <br>
+                            <input type="radio" name="survey1" id="survey1" value="fb"> Facebook <br>
+                            <input type="radio" name="survey1" id="survey1" value="linkedin"> LinkedIn <br>
+                            <input type="radio" name="survey1" id="survey1" value="yt"> Youtube <br>
+                            <input type="radio" name="survey1" id="survey1" value="iklan"> Iklan <br>
+                            <input type="radio" name="survey1" id="survey1" value="group_wa"> Group Whatsapp <br>
+                            <input type="radio" name="survey1" id="survey1" value="chat_wa"> Chat Whatsapp <br>
+                            <input type="radio" name="survey1" id="survey1" value="pelatihan"> Pelatihan <br>
+                            <input type="radio" name="survey1" id="survey1" value="teman"> Teman <br>
+                            <input type="radio" name="survey1" id="survey1" value="brosur"> Brosur <br>
+                            <input type="radio" name="survey1" id="survey1" value="voucher"> Voucher <br>
+                            <input type="radio" name="survey1" id="survey1" value="pameran"> Pameran <br>
+                            <input type="radio" name="survey1" id="survey1" value="lainnya"> Lainnya <br>
                         </div>
 
                         <input type="submit" name="submit1" id="submit1" value="Kirim">

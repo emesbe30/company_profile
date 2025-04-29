@@ -22,7 +22,7 @@ $aboutLink   = ($lang_segment === 'en') ? 'about' : 'tentang';
 $contactLink = ($lang_segment === 'en') ? 'contact' : 'kontak';
 $informationLink = ($lang_segment === 'en') ? 'information' : 'informasi';
 $trainingLink = ($lang_segment === 'en') ? 'training' : 'pelatihan';
-$productLink = ($lang_segment === 'en') ? 'product' : 'produk';
+$productLink = ($lang_segment === 'en') ? 'bnsp-certification' : 'sertifikasi-bnsp';
 $jadwalpendaftaranLink = ($lang_segment === 'en') ? 'schedule-and-registration' : 'jadwal-dan-pendaftaran';
 
 // Ambil bagian dari URL tanpa segmen bahasa
@@ -40,6 +40,7 @@ $replace_map = [
     'pelatihan' => 'training',
     'produk' => 'product',
     'jadwal-dan-pendaftaran' => 'schedule-and-registration',
+    'sertifikasi-bnsp' => 'bnsp-certification',
 ];
 
 foreach ($replace_map as $id => $en) {
@@ -102,7 +103,7 @@ if (!empty($categoriesAktivitas)) {
         </li>
         <li><a href="<?= base_url($lang . '/' . $aboutLink) ?>" class="<?= isset($data['activeMenu']) && $data['activeMenu'] === 'about' ? 'active' : '' ?>"><?= lang('bahasa.about'); ?></a></li>
         <!-- Article Dropdown -->
-        <li><a href="<?= base_url($lang . '/' . $productLink) ?>" class="<?= isset($activeMenu) && $activeMenu === 'product' ? 'active' : '' ?>"><?= lang('bahasa.product'); ?></a></li>
+        <li><a href="<?= base_url($lang . '/' . $productLink) ?>" class="<?= isset($activeMenu) && $activeMenu === 'bnsp-certification' ? 'active' : '' ?>"><?= lang('bahasa.bnsp-certification'); ?></a></li>
 
 
         <!-- Aktivitas Dropdown -->

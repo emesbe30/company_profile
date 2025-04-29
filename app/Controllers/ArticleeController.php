@@ -175,7 +175,7 @@ class ArticleeController extends BaseController
             // Redirect ke URL yang benar
             $correctedSlug = $lang === 'id' ? $artikel['slug_artikel_id'] : $artikel['slug_artikel_en'];
             $categorySlug = $lang === 'id' ? $category['slug_kategori_id'] : $category['slug_kategori_en'];
-            $urlmenu = $lang === 'id' ? 'artikel' : 'article';
+            $urlmenu = $lang === 'id' ? 'informasi' : 'information';
             return redirect()->to("$lang/$urlmenu/$categorySlug/$correctedSlug");
         }
 
@@ -190,7 +190,7 @@ class ArticleeController extends BaseController
         $categorySlugCheck = ($lang === 'id') ? $category['slug_kategori_id'] : $category['slug_kategori_en'];
         $slugCheck = ($lang === 'id') ? $artikel['slug_artikel_id'] : $artikel['slug_artikel_en'];
 
-        $canonical = base_url("$lang/" . (($lang === 'id') ? 'artikel' : 'article') . '/' . ($categorySlugCheck !== false ? $categorySlugCheck : '') . '/' . ($slugCheck !== false ? $slugCheck : ''));
+        $canonical = base_url("$lang/" . (($lang === 'id') ? 'informasi' : 'information') . '/' . ($categorySlugCheck !== false ? $categorySlugCheck : '') . '/' . ($slugCheck !== false ? $slugCheck : ''));
 
 
         if (current_url() !== $canonical) {

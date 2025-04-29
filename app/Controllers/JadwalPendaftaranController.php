@@ -15,11 +15,13 @@ class JadwalPendaftaranController extends BaseController
 {
     protected $lang;
     protected $uri;
+    private $jadwalPendaftaranModel;
 
     public function __construct()
     {
         $this->lang = session()->get('lang') ?? 'id';
         $this->uri = service('uri');
+        $this->jadwalPendaftaranModel = new \App\Models\JadwalPendaftaranModel();
     }
 
     public function index()
@@ -67,5 +69,29 @@ class JadwalPendaftaranController extends BaseController
             'categories' => $categories,
             'categoriesAktivitas' => $categoriesAktivitas
         ]);
+    }
+
+    public function tambah(){
+        $nama = $this->request->getVar('nama1');
+        $domisili = $this->request->getVar('domisili1');
+        $no_tlp = $this->request->getVar('no_tlp1');
+        $email = $this->request->getVar('email1');
+        $jadwal = $this->request->getVar('jadwal1');
+        $survey = $this->request->getVar('survey1');
+        
+        $currentDateTime = date('dmYHis');
+        $data = [
+            'nama' => $nama,
+            'domisili' => $domisili,
+            'no_tlp' => $no_tlp,
+            'email' => $email,
+            'jadwal' => $jadwal,
+            'survey' => $survey,
+            'created_at' => $currentDateTime
+        ];
+        $this->jadwalPendaftaranModel->insert($data);
+        session()->setFlashdata('success', 'Data berhasil ditambahkan!');
+        return redirect()->to(base_url('/id/jadwal-dan-pendaftaran'));
+
     }
 }

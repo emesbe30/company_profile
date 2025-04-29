@@ -137,8 +137,8 @@ $routes->group('id', function ($routes) {
 
     $routes->get('jadwal-dan-pendaftaran', 'JadwalPendaftaranController::index');
 
-    $routes->get('produk', 'ProductController::index');
-    $routes->get('produk/(:segment)', 'ProductController::detail/$1');
+    $routes->get('sertifikasi-bnsp', 'ProductController::index');
+    $routes->get('sertifikasi-bnsp/(:segment)', 'ProductController::detail/$1');
     $routes->get('(:segment)', 'ContentController::index');
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');
@@ -161,8 +161,8 @@ $routes->group('en', function ($routes) {
 
     $routes->get('schedule-and-registration', 'JadwalPendaftaranController::index');
 
-    $routes->get('product', 'ProductController::index');
-    $routes->get('product/(:segment)', 'ProductController::detail/$1');
+    $routes->get('bnsp-certification', 'ProductController::index');
+    $routes->get('bnsp-certification/(:segment)', 'ProductController::detail/$1');
     $routes->get('(:segment)', 'ContentController::index');
     $routes->get('(:segment)/(:segment)', 'ContentController::category');
     $routes->get('(:segment)/(:segment)/(:segment)', 'ContentController::detail');

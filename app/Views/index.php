@@ -87,7 +87,7 @@
 </section>
 <!-- /About Section -->
 
-<!-- Product Section -->
+<!-- Sertifikasi Section -->
 <section id="product" class="product section">
     <div class="container">
         <!-- Section Title -->
@@ -104,17 +104,17 @@
                         <div class="col-lg-4 col-md-6 product-item isotope-item">
                             <div class="product-content">
                                 <a href="<?= base_url($lang == 'id'
-                                                ? 'id/produk/produk-detail/' . esc($p['slug_id'])
-                                                : 'en/product/product-detail/' . esc($p['slug_en'])); ?>">
-                                    <img src="<?= base_url('assets/img/produk/' . esc($p["foto_produk"])); ?>"
+                                                ? 'id/sertifikasi-bnsp/' . esc($p['slug_id'])
+                                                : 'en/bnsp-certification/' . esc($p['slug_en'])); ?>">
+                                    <img src="<?= base_url('assets/img/sertifikasi/' . esc($p["foto_produk"])); ?>"
                                         class="img-fluid"
                                         alt="<?= esc($lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']); ?>" />
                                 </a>
                                 <div class="product-info">
                                     <h4>
                                         <a href="<?= base_url($lang == 'id'
-                                                        ? 'id/produk/produk-detail/' . esc($p['slug_id'])
-                                                        : 'en/product/product-detail/' . esc($p['slug_en'])); ?>">
+                                                        ? 'id/sertifikasi-bnsp/' . esc($p['slug_id'])
+                                                        : 'en/bnsp-certification/' . esc($p['slug_en'])); ?>">
                                             <?= esc($lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']); ?>
                                         </a>
                                     </h4>
@@ -123,13 +123,13 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <p class="text-center">Produk tidak tersedia saat ini.</p>
+                    <p class="text-center">Sertifikasi tidak tersedia saat ini.</p>
                 <?php endif; ?>
             </div>
 
             <!-- Button Lihat Semua -->
             <div class="text-center mt-4">
-                <a href="<?= base_url($lang == 'id' ? 'id/produk' : 'en/product'); ?>" class="read-more">
+                <a href="<?= base_url($lang == 'id' ? 'id/sertifikasi-bnsp' : 'en/bnsp-certification'); ?>" class="read-more">
                     <?= lang('bahasa.buttonArticle'); ?> <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
@@ -172,7 +172,7 @@
                             </div>
                         <?php endforeach; ?>
                     <?php else : ?>
-                        <p class="text-center">Tidak ada aktivitas yang tersedia saat ini.</p>
+                        <p class="text-center">Tidak ada pelatihan yang tersedia saat ini.</p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -207,10 +207,10 @@
                     <div class="article-image">
                         <a href="<?= base_url(
                                         $lang === 'id'
-                                            ? 'id/artikel/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                            : 'en/article/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
+                                            ? 'id/informasi/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                            : 'en/information/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
                                     ); ?>">
-                            <img src="<?= base_url('assets/img/artikel/' . esc($article[0]['foto_artikel'] ?? 'default.jpg')); ?>"
+                            <img src="<?= base_url('assets/img/information/' . esc($article[0]['foto_artikel'] ?? 'default.jpg')); ?>"
                                 alt="<?= esc($lang == 'id' ? $article[0]['alt_artikel_id'] : $article[0]['alt_artikel_en']); ?>"
                                 class="img-fluid"
                                 loading="lazy">
@@ -221,8 +221,8 @@
                         <h3 class="article-title">
                             <a href="<?= base_url(
                                             $lang === 'id'
-                                                ? 'id/artikel/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                                : 'en/article/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
+                                                ? 'id/informasi/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                                : 'en/information/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
                                         ); ?>">
                                 <?= esc($lang == 'id' ? $article[0]['judul_artikel_id'] : $article[0]['judul_artikel_en']); ?>
                             </a>
@@ -240,21 +240,21 @@
                         <div class="text-start mt-3">
                             <a href="<?= base_url(
                                             $lang === 'id'
-                                                ? 'id/artikel/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                                : 'en/article/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
+                                                ? 'id/informasi/' . esc($article[0]['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . esc($article[0]['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                                : 'en/information/' . esc($article[0]['slug_kategori_en'] ?? 'category-not-found') . '/' . esc($article[0]['slug_artikel_en'] ?? 'article-not-found')
                                         ); ?>" class="btn btn-secondary">
                                 <?= lang('bahasa.buttonArticle'); ?>
                             </a>
                         </div>
                     </div>
                 <?php else: ?>
-                    <p class="text-center">Tidak ada artikel tersedia saat ini.</p>
+                    <p class="text-center">Tidak ada informasi terbaru saat ini.</p>
                 <?php endif; ?>
             </div>
 
             <!-- Artikel Lainnya -->
             <div class="articles-list" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="articles-list-title"><?= $lang == 'id' ? 'Artikel Lainnya' : 'Related Articles'; ?></h3>
+                <h3 class="articles-list-title"><?= $lang == 'id' ? 'Informasi Lainnya' : 'Related Information'; ?></h3>
 
                 <?php if (!empty($sideArtikel)) : ?>
                     <?php foreach ($sideArtikel as $article) : ?>
@@ -262,10 +262,10 @@
                             <div class="article-image">
                                 <a href="<?= base_url(
                                                 $lang == 'id'
-                                                    ? 'id/artikel/' . esc($article['slug_kategori_id']) . '/' . esc($article['slug_artikel_id'])
-                                                    : 'en/article/' . esc($article['slug_kategori_en']) . '/' . esc($article['slug_artikel_en'])
+                                                    ? 'id/informasi/' . esc($article['slug_kategori_id']) . '/' . esc($article['slug_artikel_id'])
+                                                    : 'en/information/' . esc($article['slug_kategori_en']) . '/' . esc($article['slug_artikel_en'])
                                             ); ?>">
-                                    <img src="<?= base_url('assets/img/artikel/' . esc($article['foto_artikel'])); ?>"
+                                    <img src="<?= base_url('assets/img/information/' . esc($article['foto_artikel'])); ?>"
                                         alt="<?= esc($lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']); ?>"
                                         class="img-fluid" style="width: 120px; height: 100px; object-fit: cover; border-radius: 8%;" loading="lazy">
                                 </a>
@@ -275,8 +275,8 @@
                                 <h4 class="article-title">
                                     <a href="<?= base_url(
                                                     $lang == 'id'
-                                                        ? 'id/artikel/' . esc($article['slug_kategori_id']) . '/' . esc($article['slug_artikel_id'])
-                                                        : 'en/article/' . esc($article['slug_kategori_en']) . '/' . esc($article['slug_artikel_en'])
+                                                        ? 'id/informasi/' . esc($article['slug_kategori_id']) . '/' . esc($article['slug_artikel_id'])
+                                                        : 'en/information/' . esc($article['slug_kategori_en']) . '/' . esc($article['slug_artikel_en'])
                                                 ); ?>">
                                         <?= esc($lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']); ?>
                                     </a>
@@ -287,7 +287,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <p class="text-center">Tidak ada artikel terkait.</p>
+                    <p class="text-center">Tidak ada informasi terbaru saat ini.</p>
                 <?php endif; ?>
             </div>
 

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="display-2 text-white animated slideInDown mb-4">
-                    <?= esc(lang('bahasa.product')); ?>
+                    <?= esc(lang('bahasa.bnsp-certification')); ?>
                 </h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -16,7 +16,7 @@
                             <a href="<?= base_url($lang . '/') ?>"> <?= esc(lang('bahasa.home')); ?> </a>
                         </li>
                         <li class="breadcrumb-item text-white active" aria-current="page">
-                            <?= esc(lang('bahasa.product')); ?>
+                            <?= esc(lang('bahasa.bnsp-certification')); ?>
                         </li>
                     </ol>
                 </nav>
@@ -53,15 +53,15 @@
                         <div class="col-lg-4 col-md-6 product-item isotope-item">
                             <div class="product-content">
                                 <a href="<?= base_url($lang == 'id'
-                                                ? 'id/produk/produk-detail/' . esc($p['slug_id'])
-                                                : 'en/product/product-detail/' . esc($p['slug_en'])); ?>">
-                                    <img src="<?= base_url('assets/img/produk/' . esc($p["foto_produk"])); ?>"
+                                                ? 'id/sertifikasi-bnsp/' . esc($p['slug_id'])
+                                                : 'en/bnsp-certfication/' . esc($p['slug_en'])); ?>">
+                                    <img src="<?= base_url('assets/img/sertifikasi/' . esc($p["foto_produk"])); ?>"
                                         class="img-fluid"
                                         alt="<?= esc($lang == 'id' ? $p['alt_produk_id'] : $p['alt_produk_en']); ?>" />
                                 </a>
                                 <div class="product-info">
                                     <h4>
-                                        <a href="<?= base_url($lang == 'id' ? 'id/produk/' . $p['slug_id'] : 'en/product/' . $p['slug_en']); ?>" class="produk-card-title">
+                                        <a href="<?= base_url($lang == 'id' ? 'id/sertifikasi-bnsp/' . $p['slug_id'] : 'en/bnsp-certification/' . $p['slug_en']); ?>" class="produk-card-title">
                                             <?= $lang == 'id' ? $p['nama_produk_id'] : $p['nama_produk_en']; ?>
                                         </a>
                                     </h4>
