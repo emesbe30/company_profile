@@ -92,7 +92,7 @@ $indonesia_url = base_url($clean_url);
                     <?php if (!empty($kategori_teratas) && is_array($kategori_teratas)): ?>
                         <?php foreach ($kategori_teratas as $kategori): ?>
                             <li><i class="bi bi-chevron-right"></i> 
-                                <a href="<?= base_url($lang . '/artikel/' . $kategori['slug_kategori_id']) ?>"> 
+                                <a href="<?= base_url($lang . '/informasi/' . $kategori['slug_kategori_id']) ?>"> 
                                     <?= $kategori['nama_kategori_id']; ?> 
                                 </a>
                             </li>
