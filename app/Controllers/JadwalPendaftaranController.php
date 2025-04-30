@@ -71,7 +71,7 @@ class JadwalPendaftaranController extends BaseController
         ]);
     }
 
-    public function tambah(){
+    public function tambah_pelatihan(){
         $nama = $this->request->getVar('nama1');
         $domisili = $this->request->getVar('domisili1');
         $no_tlp = $this->request->getVar('no_tlp1');
@@ -79,15 +79,39 @@ class JadwalPendaftaranController extends BaseController
         $jadwal = $this->request->getVar('jadwal1');
         $survey = $this->request->getVar('survey1');
         
-        $currentDateTime = date('dmYHis');
+        $type = 'sertifikasi_dan_pelatihan';
         $data = [
-            'nama' => $nama,
+            'nama_peserta' => $nama,
             'domisili' => $domisili,
             'no_tlp' => $no_tlp,
             'email' => $email,
             'jadwal' => $jadwal,
             'survey' => $survey,
-            'created_at' => $currentDateTime
+            'tipe_pendaftaran' => $type,
+        ];
+        $this->jadwalPendaftaranModel->insert($data);
+        session()->setFlashdata('success', 'Data berhasil ditambahkan!');
+        return redirect()->to(base_url('/id/jadwal-dan-pendaftaran'));
+
+    }
+
+    public function tambah_sertifikasi(){
+        $nama = $this->request->getVar('nama2');
+        $domisili = $this->request->getVar('domisili2');
+        $no_tlp = $this->request->getVar('no_tlp2');
+        $email = $this->request->getVar('email2');
+        $jadwal = $this->request->getVar('jadwal2');
+        $survey = $this->request->getVar('survey2');
+        
+        $type = 'sertifikasi_saja';
+        $data = [
+            'nama_peserta' => $nama,
+            'domisili' => $domisili,
+            'no_tlp' => $no_tlp,
+            'email' => $email,
+            'jadwal' => $jadwal,
+            'survey' => $survey,
+            'tipe_pendaftaran' => $type,
         ];
         $this->jadwalPendaftaranModel->insert($data);
         session()->setFlashdata('success', 'Data berhasil ditambahkan!');

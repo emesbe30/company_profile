@@ -75,7 +75,7 @@
             <div class="col-md-6">
                 <div class="form-container">
                     <h3 class="text-center mb-4">Pendaftaran Pelatihan</h3>
-                    <form action="<?= base_url('admin/artikel/proses_tambah') ?>" method="POST">
+                    <form action="<?= base_url('id/jadwal-dan-pendaftaran/tambah-pelatihan') ?>" method="POST">
                         <label for="nama1"><span style="color: red;">*</span>Nama :</label>
                         <input type="text" name="nama1" id="nama1" required>
 
@@ -83,10 +83,10 @@
                         <input type="text" name="domisili1" id="domisili1" required>
 
                         <label for="no_tlp1"><span style="color: red;">*</span>No Telepon / Whatsapp :</label>
-                        <input type="text" name="no_tlp1" id="no_tlp1" required>
+                        <input type="text" name="no_tlp1" id="no_tlp1" pattern="^[0-9]{12,13}$" title="Nomor yang anda masukkan tidak sesuai format" required>
 
                         <label for="email1"><span style="color: red;">*</span>Alamat Email :</label>
-                        <input type="text" name="email1" id="email1" required>
+                        <input type="text" name="email1" id="email1" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" title="Masukkan email dengan benar" required>
 
                         <label for="jadwal1"><span style="color: red;">*</span>Jadwal Pelatihan :</label>
                         <select name="jadwal1" id="jadwal1">
@@ -122,7 +122,7 @@
             <div class="col-md-6">
                 <div class="form-container">
                     <h3 class="text-center mb-4">Pendaftaran Sertifikasi</h3>
-                    <form action="POST">
+                    <form action="<?= base_url('id/jadwal-dan-pendaftaran/tambah-sertifikasi') ?>" method="POST">
                         <label for="nama2"><span style="color: red;">*</span>Nama :</label>
                         <input type="text" name="nama2" id="nama2" required>
 
@@ -130,10 +130,10 @@
                         <input type="text" name="domisili2" id="domisili2" required>
 
                         <label for="no_tlp2"><span style="color: red;">*</span>No Telepon / Whatsapp :</label>
-                        <input type="text" name="no_tlp2" id="no_tlp2" required>
+                        <input type="text" name="no_tlp2" id="no_tlp2" pattern="^[0-9]{12,13}$" title="Nomor yang anda masukkan tidak sesuai format" required>
 
                         <label for="email2"><span style="color: red;">*</span>Alamat Email :</label>
-                        <input type="text" name="email2" id="email2" required>
+                        <input type="text" name="email2" id="email2" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" title="Masukkan email dengan benar" required>
 
                         <label for="jadwal2"><span style="color: red;">*</span>Jadwal Sertifikasi :</label>
                         <select name="jadwal2" id="jadwal2">

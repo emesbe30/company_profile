@@ -113,7 +113,8 @@ $routes->get('admin/meta/edit/(:num)', 'admin\MetaController::edit/$1');
 $routes->post('admin/meta/proses_edit/(:num)', 'admin\MetaController::proses_edit/$1');
 $routes->get('admin/meta/delete/(:any)', 'admin\MetaController::delete/$1');
 
-
+//ADMIN FORM
+$routes->get('admin/form', 'admin\FormController::index');
 
 $routes->get('/', function () {
     return redirect()->to('/id/'); // Default redirect ke /en/home
@@ -136,6 +137,8 @@ $routes->group('id', function ($routes) {
     $routes->get('pelatihan/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
     $routes->get('jadwal-dan-pendaftaran', 'JadwalPendaftaranController::index');
+    $routes->post('jadwal-dan-pendaftaran/tambah-sertifikasi', 'JadwalPendaftaranController::tambah_sertifikasi');
+    $routes->post('jadwal-dan-pendaftaran/tambah-pelatihan', 'JadwalPendaftaranController::tambah_pelatihan');
 
     $routes->get('sertifikasi-bnsp', 'ProductController::index');
     $routes->get('sertifikasi-bnsp/(:segment)', 'ProductController::detail/$1');
@@ -160,6 +163,8 @@ $routes->group('en', function ($routes) {
     $routes->get('training/(:segment)/(:segment)', 'ActivityController::detail/$1/$2');
 
     $routes->get('schedule-and-registration', 'JadwalPendaftaranController::index');
+    $routes->post('schedule-and-registration/certification-add', 'JadwalPendaftaranController::tambah_sertifikasi');
+    $routes->post('schedule-and-registration/training-add', 'JadwalPendaftaranController::tambah_pelatihan');
 
     $routes->get('bnsp-certification', 'ProductController::index');
     $routes->get('bnsp-certification/(:segment)', 'ProductController::detail/$1');

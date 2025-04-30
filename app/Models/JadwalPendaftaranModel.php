@@ -6,13 +6,21 @@ use CodeIgniter\Model;
 
 class JadwalPendaftaranModel extends Model
 {
-    protected $table            = 'jadwalpendaftarans';
+    protected $table            = 'tb_form';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'nama_peserta',
+        'domisili',
+        'no_tlp',
+        'email',
+        'jadwal',
+        'survey',
+        'created_at',
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
